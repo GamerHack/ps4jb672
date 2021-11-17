@@ -21,7 +21,7 @@ color: white;
 text-align: center;
 display: block;
 }
-#dumper-section {
+#backup-section {
 text-align: center;
 display: none;
 }
@@ -115,21 +115,21 @@ else {
 <h1 style="font-size:20px;text-align:center;">Payloads</h1>
 <button class="btn btn-jb2" onclick=load_jb2()> Jailbreak </button>
 <button class="btn" onclick=load_ftp()> FTP </button>
-<button class="btn" onclick=load_dumper_section()> Dump Tools </button>
+<button class="btn" onclick=load_App2usb()> App2USB </button>
 <button class="btn" onclick=load_binloader()> Bin Loader </button>
+<br>
+<button class="btn" onclick=load_dumperG()> Dump Game Only </button>
+<button class="btn" onclick=load_dumperU()> Dump Update Only </button>
+<button class="btn" onclick=load_dumperGU()> Dump Game + Update </button>
+<button class="btn" onclick=load_dumperM()> Dump G. + U. Merged </button>
 <br>
 <button class="btn" onclick=load_enableUpdates()>  Enable Updates </button>
 <button class="btn" onclick=load_disableUpdates()> Disable Updates </button>
-<button class="btn" onclick=load_DBbackup()> DB Backup </button>
-<button class="btn" onclick=load_DBrestore()> DB Restore </button>
+<button class="btn" onclick=load_backup_section()> Backup and Restore </button>
+<button class="btn" onclick=load_historyBlocker()> History Blocker </button>
 <br>
-<button class="btn" onclick=load_AvatarBackup()> Avatar Backup </button>
-<button class="btn" onclick=load_AvatarRestore()> Avatar Restore </button>
 <button class="btn" onclick=load_LinuxUSB()> Linux USB </button>
 <button class="btn" onclick=load_LinuxBaikal()> Linux Baikal </button>
-<br>
-<button class="btn" onclick=load_App2usb()> App2USB </button>
-<button class="btn" onclick=load_historyBlocker()> History Blocker </button>
 <button class="btn" onclick=load_webrte()> WebRTE </button>
 <a href="http://ps4trainer.com/Trainer/index.html"><button class="btn btn-web"> PS4 Trainer Web </button></a>
 <br>
@@ -146,19 +146,29 @@ else {
 <hr style="margin-top: 21px;">
 <h1 style="font-size:25px;text-align:center;margin-top: 15px;color:yellow;">Many Thanks to:&nbsp&nbsp<a href="https://twitter.com/sleirsgoevy" style="color:#f31414;">@sleirsgoevy</a>&nbsp&nbsp<a style="color:white;">Leeful</a>&nbsp&nbsp<a href="https://twitter.com/_AlAzif" style="color:#f31414;">@_AlAzif</a>&nbsp&nbsp<a style="color:white;">And to all the people who keep the scene alive day after day</a></h1>
 </div>
-<div id="dumper-section">
-<h1 id=msgs2>Dump Tools </h1>
+<div id="backup-section">
+<h1 id=msgs2>Backup and Restore </h1>
 <hr>
 <br>
 <h1 style="font-size:20px;">Payloads</h1>
-<button class="btn" onclick=load_dumperG()> Dump Game Only </button>
-<button class="btn" onclick=load_dumperU()> Dump Update Only </button>
-<button class="btn" onclick=load_dumperGU()> Dump Game + Update </button>
-<button class="btn" onclick=load_dumperGUM()> Dump G. + U. Merged </button>
+<button class="btn" onclick=load_DBbackup()> DB Backup </button>
+<button class="btn" onclick=load_DBrestore()> DB Restore </button>
+<button class="btn" onclick=load_SDbackup()> Save Data Backup </button>
+<button class="btn" onclick=load_SDrestore()> Save Data Restore </button>
+<br>
+<button class="btn" onclick=load_AvatarBackup()> Avatar Backup </button>
+<button class="btn" onclick=load_AvatarRestore()> Avatar Restore </button>
+<button class="btn" onclick=load_TrophyBackup()> Trophy Backup </button>
+<button class="btn" onclick=load_TrophyRestore()> Trophy Restore </button>
+<br>
+<button class="btn" onclick=load_HDDbackup()> HDD Upgrade Backup </button>
+<button class="btn" onclick=load_HDDrestore()> HDD Upgrade Restore </button>
+<button class="btn" onclick=load_CacheBackup()> Offline Cache Backup </button>
+<button class="btn" onclick=load_CacheRestore()> Offline Cache Restore </button>
 <br>
 <button class="btn" onclick=close_section()> Return </button>
 <br>
-<hr style="margin-top: 400px;">
+<hr style="margin-top: 270px;">
 <h1 style="font-size:25px;text-align:center;margin-top: 15px;color:yellow;">Many Thanks to:&nbsp&nbsp<a href="https://twitter.com/sleirsgoevy" style="color:#f31414;">@sleirsgoevy</a>&nbsp&nbsp<a style="color:white;">Leeful</a>&nbsp&nbsp<a href="https://twitter.com/_AlAzif" style="color:#f31414;">@_AlAzif</a>&nbsp&nbsp<a style="color:white;">And to all the people who keep the scene alive day after day</a></h1>
 </div>
 <div id="mods-section">
@@ -191,8 +201,8 @@ for(var i=00; i<=99; i++){var select2 = document.getElementById("fws2"); var opt
 fws2.value=00;
 </script>
 <script>
-function load_dumper_section(){
-document.getElementById("dumper-section").style.display = "block";
+function load_backup_section(){
+document.getElementById("backup-section").style.display = "block";
 document.getElementById("main-section").style.display = "none";
 }
 
@@ -203,7 +213,7 @@ document.getElementById("main-section").style.display = "none";
 
 function close_section(){
 document.getElementById("main-section").style.display = "block";
-document.getElementById("dumper-section").style.display = "none";
+document.getElementById("backup-section").style.display = "none";
 document.getElementById("mods-section").style.display = "none";
 }
 
@@ -250,34 +260,6 @@ PLfile="pl_mira.bin";
 setTimeout(jailbreak,500);
 }
 
-function load_dumperG(){
-msgs2.innerHTML="Loading Dumper ...";
-LoadedMSG="Dumper Loaded ✔";
-PLfile="pl_DumperG.bin";
-loadScript1();
-}
-
-function load_dumperU(){
-msgs2.innerHTML="Loading Dumper ...";
-LoadedMSG="Dumper Loaded ✔";
-PLfile="pl_DumperU.bin";
-loadScript1();
-}
-
-function load_dumperGU(){
-msgs2.innerHTML="Loading Dumper ...";
-LoadedMSG="Dumper Loaded ✔";
-PLfile="pl_DumperGU.bin";
-loadScript1();
-}
-
-function load_dumperGUM(){
-msgs2.innerHTML="Loading Dumper ...";
-LoadedMSG="Dumper Loaded ✔";
-PLfile="pl_DumperGUM.bin";
-loadScript1();
-}
-
 function load_ftp(){
 msgs.innerHTML="Loading FTP ...";
 LoadedMSG="FTP Loaded ✔";
@@ -285,10 +267,45 @@ PLfile="pl_FTP.bin";
 loadScript1();
 }
 
+function load_App2usb(){
+msgs.innerHTML="Loading App2usb ...";
+LoadedMSG="App2usb Loaded ✔";
+PLfile="pl_App2usb.bin";
+loadScript1();
+}
+
 function load_binloader(){
 msgs.innerHTML="Loading Bin Loader ...";
 LoadedMSG="Send Payload To Port 9021";
 function loadScript(){getScript("pl_loaderBL.js");}loadScript();
+}
+
+function load_dumperG(){
+msgs.innerHTML="Loading Dumper ...";
+LoadedMSG="Dumper Loaded ✔";
+PLfile="pl_DumperG.bin";
+loadScript1();
+}
+
+function load_dumperU(){
+msgs.innerHTML="Loading Dumper ...";
+LoadedMSG="Dumper Loaded ✔";
+PLfile="pl_DumperU.bin";
+loadScript1();
+}
+
+function load_dumperGU(){
+msgs.innerHTML="Loading Dumper ...";
+LoadedMSG="Dumper Loaded ✔";
+PLfile="pl_DumperGU.bin";
+loadScript1();
+}
+
+function load_dumperM(){
+msgs.innerHTML="Loading Dumper ...";
+LoadedMSG="Dumper Loaded ✔";
+PLfile="pl_DumperM.bin";
+loadScript1();
 }
 
 function load_enableUpdates(){
@@ -306,30 +323,86 @@ loadScript1();
 }
 
 function load_DBbackup(){
-msgs.innerHTML="Loading Database Backup ...";
+msgs2.innerHTML="Loading Database Backup ...";
 LoadedMSG="Database Backup Loaded ✔";
 PLfile="pl_DBbackup.bin";
 loadScript1();
 }
 
 function load_DBrestore(){
-msgs.innerHTML="Loading Database Restore ...";
+msgs2.innerHTML="Loading Database Restore ...";
 LoadedMSG="Database Restore Loaded ✔";
 PLfile="pl_DBrestore.bin";
 loadScript1();
 }
 
+function load_SDbackup(){
+msgs2.innerHTML="Loading Save Data Backup ...";
+LoadedMSG="Save Data Backup Loaded ✔";
+PLfile="pl_SaveDataBackup.bin";
+loadScript1();
+}
+
+function load_SDrestore(){
+msgs2.innerHTML="Loading Save Data Restore ...";
+LoadedMSG="Save Data Restore Loaded ✔";
+PLfile="pl_SaveDataRestore.bin";
+loadScript1();
+}
+
 function load_AvatarBackup(){
-msgs.innerHTML="Loading Avatar Backup ...";
+msgs2.innerHTML="Loading Avatar Backup ...";
 LoadedMSG="Avatar Backup Loaded ✔";
 PLfile="pl_LinuxUSB.bin";
 loadScript1();
 }
 
 function load_AvatarRestore(){
-msgs.innerHTML="Loading Avatar Restore ...";
+msgs2.innerHTML="Loading Avatar Restore ...";
 LoadedMSG="Avatar Restore Loaded ✔";
 PLfile="pl_AvatarBackup.bin";
+loadScript1();
+}
+
+function load_TrophyBackup(){
+msgs2.innerHTML="Loading Trophy Backup ...";
+LoadedMSG="Trophy Backup Loaded ✔";
+PLfile="pl_TrophyBackup.bin";
+loadScript1();
+}
+
+function load_TrophyRestore(){
+msgs2.innerHTML="Loading Trophy Restore ...";
+LoadedMSG="Trophy Restore Loaded ✔";
+PLfile="pl_TrophyRestore.bin";
+loadScript1();
+}
+
+function load_HDDbackup(){
+msgs2.innerHTML="Loading HDD Upgrade Backup ...";
+LoadedMSG="HDD Upgrade Backup Loaded ✔";
+PLfile="pl_HDD_Backup.bin";
+loadScript1();
+}
+
+function load_HDDrestore(){
+msgs2.innerHTML="Loading HDD Upgrade Restore ...";
+LoadedMSG="HDD Upgrade Restore Loaded ✔";
+PLfile="pl_HDD_Restore.bin";
+loadScript1();
+}
+
+function load_CacheBackup(){
+msgs2.innerHTML="Loading Offline Cache Backup ...";
+LoadedMSG="Offline Cache Backup Loaded ✔";
+PLfile="pl_OfflineCacheBackup.bin";
+loadScript1();
+}
+
+function load_CacheRestore(){
+msgs2.innerHTML="Loading Offline Cache Restore ...";
+LoadedMSG="Offline Cache Restore Loaded ✔";
+PLfile="pl_OfflineCacheRestore.bin";
 loadScript1();
 }
 
@@ -344,13 +417,6 @@ function load_LinuxBaikal(){
 msgs.innerHTML="Loading Linux Payload ...";
 LoadedMSG="Linux Payload Loaded ✔";
 PLfile="pl_LinuxBaikal.bin";
-loadScript1();
-}
-
-function load_App2usb(){
-msgs.innerHTML="Loading App2usb ...";
-LoadedMSG="App2usb Loaded ✔";
-PLfile="pl_App2usb.bin";
 loadScript1();
 }
 
@@ -402,7 +468,7 @@ function loadPLScript(){getScript("pl_FWspoof.js");}loadPLScript();
 function load_todex(){
 msgs.innerHTML="Loading ToDex ...";
 LoadedMSG="ToDex Loaded ✔";
-PLfile="pl_ToDex.bin";
+PLfile="pl_ToDEX.bin";
 loadScript1();
 }
 
