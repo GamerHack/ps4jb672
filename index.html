@@ -107,7 +107,8 @@ else {
 <hr>
 <br>
 <h1 style="font-size:20px;"><font color="green">Pass = <span id=passCounter></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="yellow">Main Payloads (Run One to Jailbreak)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">Fail = <span id=failCounter></span></h1>
-<button class="btn" onclick=load_goldhen()> GoldHEN v1.1 </button>
+<button class="btn" onclick=load_goldhen2()> GoldHEN v2.0b </button>
+<button class="btn" onclick=load_goldhen1()> GoldHEN v1.1 </button>
 <button class="btn" onclick=load_hen()> HEN v2.1.3 </button>
 <button class="btn" onclick=load_henb()> HEN v2.1.3b </button>
 <button class="btn" onclick=load_mira()> Mira </button>
@@ -229,10 +230,17 @@ window.failCounter.innerHTML=localStorage.failcount;
 function load_jb2(){
 msgs.innerHTML="Loading Jailbreak, Plase Wait ...";
 LoadedMSG="Jailbreak Completed ✔";
-function loadScript(){getScript("jb2.js",function(){setTimeout(jailbreak2,2000);});}loadScript();
+function loadScript(){getScript("jb2.js",function(){setTimeout(jailbreak2,1500);});}loadScript();
 }
 
-function load_goldhen(){
+function load_goldhen2(){
+msgs.innerHTML="Loading GoldHEN v2.0b ...";
+LoadedMSG="GoldHEN v2..0b Loaded ✔";
+PLfile="pl_goldhen_2.0b_672.bin";
+setTimeout(jailbreak,500);
+}
+
+function load_goldhen1(){
 msgs.innerHTML="Loading GoldHEN v1.1 ...";
 LoadedMSG="GoldHEN v1.1 Loaded ✔";
 PLfile="pl_goldhen_1.1_672.bin";
