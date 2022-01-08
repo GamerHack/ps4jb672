@@ -32,8 +32,8 @@ display: none;
 .btn {
 background-color: #003263;
 color: white;
-width: 260px;
-height: 49px;
+width: 257px;
+height: 46px;
 padding-bottom: 5px;
 text-align: center;
 font-size: 20px;
@@ -103,17 +103,18 @@ else {
 </script>
 </head>
 <div id="main-section">
-<h1 id=msgs>PS4 6.72 Host v3.0 by GamerHack</h1>
+<h1 id=msgs>PS4 6.72 FW Host v3.0 by GamerHack</h1>
 <hr>
-<br>
 <h1 style="font-size:20px;"><font color="green">Pass = <span id=passCounter></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="yellow">Main Payloads (Run One to Jailbreak)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">Fail = <span id=failCounter></span></h1>
-<button class="btn" onclick=load_goldhen2()> GoldHEN v2.0b </button>
+<button class="btn" onclick=load_goldhen2b2()> GoldHEN v2.0b2 </button>
+<button class="btn" onclick=load_goldhen2b()> GoldHEN v2.0b </button>
 <button class="btn" onclick=load_goldhen1()> GoldHEN v1.1 </button>
+<br>
 <button class="btn" onclick=load_hen()> HEN v2.1.3 </button>
 <button class="btn" onclick=load_henb()> HEN v2.1.3b </button>
 <button class="btn" onclick=load_mira()> Mira </button>
 <br>
-<h1 style="font-size:20px;text-align:center;">Payloads</h1>
+<h1 style="font-size:20px;">Payloads</h1>
 <button class="btn btn-jb2" onclick=load_jb2()> Jailbreak </button>
 <button class="btn" onclick=load_ftp()> FTP </button>
 <button class="btn" onclick=load_App2usb()> App2USB </button>
@@ -144,8 +145,7 @@ else {
 <button class="btn btn-toolbox" onclick=load_orbistlbox()> Orbis-Toolbox </button>
 <button class="btn btn-main" onclick=load_fanthresh()> Fan Threshold </button><font color="white"><select id="tempC"></select>&#176;C
 <br>
-<hr style="margin-top: 21px;">
-<h1 style="font-size:25px;text-align:center;margin-top: 15px;color:yellow;">Many Thanks to:&nbsp&nbsp<a href="https://twitter.com/sleirsgoevy" style="color:#f31414;">@sleirsgoevy</a>&nbsp&nbsp<a style="color:white;">Leeful</a>&nbsp&nbsp<a href="https://twitter.com/_AlAzif" style="color:#f31414;">@_AlAzif</a>&nbsp&nbsp<a style="color:white;">And to all the people who keep the scene alive day after day</a></h1>
+<h1 style="font-size:25px;text-align:center;margin-top: 17px;color:yellow;">Many Thanks to:&nbsp&nbsp<a href="https://twitter.com/sleirsgoevy" style="color:#f31414;">@sleirsgoevy</a>&nbsp&nbsp<a style="color:white;">Leeful</a>&nbsp&nbsp<a href="https://twitter.com/_AlAzif" style="color:#f31414;">@_AlAzif</a>&nbsp&nbsp<a style="color:white;">And to all the people who keep the scene alive day after day</a></h1>
 </div>
 <div id="backup-section">
 <h1 id=msgs2>Backup and Restore </h1>
@@ -169,8 +169,7 @@ else {
 <br>
 <button class="btn" onclick=close_section()> Return </button>
 <br>
-<hr style="margin-top: 270px;">
-<h1 style="font-size:25px;text-align:center;margin-top: 15px;color:yellow;">Many Thanks to:&nbsp&nbsp<a href="https://twitter.com/sleirsgoevy" style="color:#f31414;">@sleirsgoevy</a>&nbsp&nbsp<a style="color:white;">Leeful</a>&nbsp&nbsp<a href="https://twitter.com/_AlAzif" style="color:#f31414;">@_AlAzif</a>&nbsp&nbsp<a style="color:white;">And to all the people who keep the scene alive day after day</a></h1>
+<h1 style="font-size:25px;text-align:center;margin-top: 290px;color:yellow;">Many Thanks to:&nbsp&nbsp<a href="https://twitter.com/sleirsgoevy" style="color:#f31414;">@sleirsgoevy</a>&nbsp&nbsp<a style="color:white;">Leeful</a>&nbsp&nbsp<a href="https://twitter.com/_AlAzif" style="color:#f31414;">@_AlAzif</a>&nbsp&nbsp<a style="color:white;">And to all the people who keep the scene alive day after day</a></h1>
 </div>
 <div id="mods-section">
 <h1 id=msgs3>Games Mods </h1>
@@ -188,8 +187,7 @@ else {
 <br>
 <button class="btn" onclick=close_section()> Return </button>
 <br>
-<hr style="margin-top: 335px;">
-<h1 style="margin-top: 15px;color:yellow;">Many Thanks to:&nbsp&nbsp<a href="https://twitter.com/sleirsgoevy" style="color:#f31414;">@sleirsgoevy</a>&nbsp&nbsp<a style="color:white;">Leeful</a>&nbsp&nbsp<a href="https://twitter.com/_AlAzif" style="color:#f31414;">@_AlAzif</a>&nbsp&nbsp<a style="color:white;">And to all the people who keep the scene alive day after day</a></h1>
+<h1 style="margin-top: 352px;color:yellow;">Many Thanks to:&nbsp&nbsp<a href="https://twitter.com/sleirsgoevy" style="color:#f31414;">@sleirsgoevy</a>&nbsp&nbsp<a style="color:white;">Leeful</a>&nbsp&nbsp<a href="https://twitter.com/_AlAzif" style="color:#f31414;">@_AlAzif</a>&nbsp&nbsp<a style="color:white;">And to all the people who keep the scene alive day after day</a></h1>
 </div>
 <script>
 for(var i=40; i<=79; i++){var select = document.getElementById("tempC"); var option = document.createElement("OPTION"); select.options.add(option); option.text = i; option.value = i;}
@@ -233,7 +231,14 @@ LoadedMSG="Jailbreak Completed ✔";
 function loadScript(){getScript("jb2.js",function(){setTimeout(jailbreak2,1500);});}loadScript();
 }
 
-function load_goldhen2(){
+function load_goldhen2b2(){
+msgs.innerHTML="Loading GoldHEN v2.0b2 ...";
+LoadedMSG="GoldHEN v2.0b2 Loaded ✔";
+PLfile="pl_goldhen_2.0b2_672.bin";
+setTimeout(jailbreak,500);
+}
+
+function load_goldhen2b(){
 msgs.innerHTML="Loading GoldHEN v2.0b ...";
 LoadedMSG="GoldHEN v2.0b Loaded ✔";
 PLfile="pl_goldhen_2.0b_672.bin";
